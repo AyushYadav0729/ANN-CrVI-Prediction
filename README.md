@@ -10,55 +10,42 @@ This project develops an Artificial Neural Network (ANN) to predict chromium (Cr
 - Techniques: L2 Regularization, Dropout, MAE Loss
 
 ## Results
-- R² Score = 8.27
-- RMSE ≈ 8.7
-- MAE ≈ 6.5
+- Mean R² = 0.8849  (≈ 0.885)
+- Standard Deviation : 0.0082
+- Min = 0.8694  
+- Max = 0.8984
 
 ## Files
-- train_ann_v3.py 
-  Script used to train the ANN model.
+- Folder -> Train_info
+  contains the traning info of the model training along with the dataset used to train the model
+- Folder -> static
+  contains style.css for the local webpage
+- Folder -> templates
+  contains html webpage for the prediction.
+  
+- Main
+  ```bash
+  ann_removal_model_v3.keras
+  preprocessor_v3.pkl
+  y_scaler_v3.pkl
+  ```
+  -saved model files
 
-- predict_ann_v3.py
-  Script used to make predictions using the trained model.
-
-- final_cleaned_dataset_v2.xlsx
-  Dataset used for training.
-
+  ```bash
+  train_ann_v3.py
+  ```
+  -ANN Model code
+  
+  ```bash
+  predict_ann_v3.py
+  app.py
+  ```
+  -Predict Files
+  
 ## Requirements
 
 Install these libraries before running the scripts:
 ```bash
 pip install pandas numpy matplotlib tensorflow scikit-learn joblib openpyxl
 ```
-## How to Run
-- 1 ) Make sure these files are in one directory:
-  - train_ann_v3.py
-  - predict_ann_v3.py
-  - final_cleaned_dataset_v2.xlsx
-
-- 2 ) Train the model
-  Open terminal / command prompt in that folder and run:
-  ```bash
-  python train_ann_v3.py
-  ```
-  this will save the trained model and preprocessing files and generate prediction and plot files
-
-- 3 ) Run the prediction
-  After training is complete
-  Open predict_ann_v3.py and edit the values inside with your values:
-  ```bash
-  new_data = pd.DataFrame([{
-    "Adsorbent": "WSB",
-    "Time": 120,
-    "Initial_Concentration": 110,
-    "pH": 5.5,
-    "Dosage": 1.1,
-    "Temperature": 25
-  }])
-  ```
-
-  then run:
-  ```bash
-  python predict_ann_v3.py
-  ```
 

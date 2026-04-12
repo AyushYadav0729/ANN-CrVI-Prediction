@@ -24,7 +24,7 @@ The model takes key adsorption parameters as input and provides real-time predic
 │   ├── ANN_Test_Metrics_v3.xlsx
 │   ├── actual_vs_predicted_v3.png
 │   ├── error_histogram_v3.png
-│   ├── final_cleaned_dataset_v3.csv
+│   ├── final_cleaned_dataset_v3_conflicts_removed.xlxx
 │   ├── loss_curve_v3.png
 │
 ├── static/
@@ -40,6 +40,7 @@ The model takes key adsorption parameters as input and provides real-time predic
 ├── train_ann_v3.py
 ├── y_scaler_v3.pkl
 ├── README.md
+├── requirements.txt
 ```
 
 ---
@@ -90,11 +91,10 @@ Evaluation plots included:
 
 The project includes a Flask-based web interface.
 
-### How it works:
-1. Select adsorbent from dropdown  
-2. Enter input parameters  
-3. Click Predict  
-4. Model returns removal efficiency (%)  
+### Install dependencies
+```bash
+pip install -r requirements.txt
+```
 
 ### Run the web app:
 ```bash
@@ -106,19 +106,12 @@ http://127.0.0.1:5000/
 
 ---
 
-## How to Use
+### How it works:
+1. Select adsorbent from dropdown  
+2. Enter input parameters  
+3. Click Predict  
+4. Model returns removal efficiency (%) 
 
-### Install dependencies
-```bash
-pip install -r requirements.txt
-```
-
-### Launch web app
-```bash
-python app.py
-```
-
----
 
 ## Important Files
 - ann_removal_model_v3.keras → trained ANN model  
